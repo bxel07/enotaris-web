@@ -13,4 +13,8 @@ class dokumen extends Model
         'npwp',
         'sertifikattanah'
     ];
+
+    public function with_enotaris_relation() {
+        $this->belongsTo(enotaris::class);
+    }
 }

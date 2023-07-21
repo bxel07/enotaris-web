@@ -21,9 +21,9 @@ Route::get('/', function () {
 Route::resource('/notaris', \App\Http\Controllers\enotariscontroller::class);
 Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
 
+Route::get('/test', [\App\Http\Controllers\test::class, 'index']);
 
 Route::middleware('auth')->post('logout', [AuthController::class, 'logout']);
-
 Route::get('login', [AuthController::class, 'showlogin'])->name('login');
 Route::get('register', [AuthController::class, 'showregister'])->name('register');
 
