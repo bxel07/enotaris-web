@@ -68,7 +68,7 @@
       <h1>Better Solutions</h1>
       <h1>For Your <span class="sp">Business</span></h1>
       <h2>We are team of talented notary public making authorized document</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <a href="#about1" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
 
@@ -78,7 +78,7 @@
     <section id="about" class="about">
 
       <div class="section-title">
-          <h2>About Us</h2>
+          <h2 id="about1">About Us</h2>
       </div>
       <div class="container-fluid">
         <div class="row">
