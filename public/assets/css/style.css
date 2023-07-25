@@ -409,12 +409,32 @@ h6 {
   font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
+  position: relative;
   padding: 12px 35px;
   margin-top: 30px;
   border-radius: 50px;
   transition: 0.5s;
   color: #fff;
   background: #FF9505;
+}
+
+#hero .btn-get-started::after{
+  content: none;
+  content: '';
+  position: absolute;
+  width: 60%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 12px;
+  left: 35px;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#hero .btn-get-started:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 @media (min-width: 1024px) {
