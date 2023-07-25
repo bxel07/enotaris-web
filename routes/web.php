@@ -20,12 +20,22 @@ Route::get('/', function () {
 
 Route::resource('/notaris', \App\Http\Controllers\enotariscontroller::class);
 Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
+Route::resource('/pengajuan' , \App\Http\Controllers\pengajuancontroller::class);
+Route::get('/pengajuan/editdokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'editdokumen'])->name('pengajuan.editdokumen');
+Route::put('/pengajuan/updatedokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'updatedokumen'])->name('pengajuan.updatedokumen');
 
 Route::get('/test', [\App\Http\Controllers\test::class, 'index']);
 
-Route::middleware('auth')->post('logout', [AuthController::class, 'logout']);
 Route::get('login', [AuthController::class, 'showlogin'])->name('login');
 Route::get('register', [AuthController::class, 'showregister'])->name('register');
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
+
+Route:: middleware(['auth'])->group(function () {
+   Route::get('dashboard', [\App\Http\Controllers\dashboard::class,'index'])->name('dashboard');
+   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
