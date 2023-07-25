@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class dokumen extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'ktp',
         'npwp',
-        'sertifikattanah'
+        'sertifikattanah',
+        'enotaris_id'
     ];
 
-    public function with_enotaris_relation() {
+    public function enotaris() {
         $this->belongsTo(enotaris::class);
     }
 }

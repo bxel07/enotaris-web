@@ -105,7 +105,7 @@ class dokumencontroller extends Controller
             $post->update([
                 'ktp' => $ktp->hashName(),
                 'npwp' => $npwp->hashName(),
-                'sertifikattanah' => $sertifikattanah->hashName()
+                'sertifikattanah' => $sertifikattanah->hashName(),
             ]);
 
             // melakukan redirect

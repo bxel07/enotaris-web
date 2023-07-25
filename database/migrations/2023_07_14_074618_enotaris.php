@@ -27,12 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //$table->id();
-        //            $table->string("nama");
-        //            $table->string("alamat");
-        //            $table->string("email");
-        //            $table->bigInteger("telepon");
-        //            $table->string("status");
-        //            $table->timestamps();
+        Schema::dropIfExists('enotaris');
     }
 };

@@ -17,7 +17,7 @@ class enotaris extends Model
         'status'
     ];
 
-    public function with_dokumens_relation() {
-        $this->hasMany(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             dokumen::class);
+    public function dokumen() {
+        $this->hasMany(dokumen::class);
     }
 }
