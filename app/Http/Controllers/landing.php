@@ -10,9 +10,6 @@ use Illuminate\Http\RedirectResponse;
 
 class landing extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('landing.index');

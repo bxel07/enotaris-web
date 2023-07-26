@@ -26,6 +26,22 @@ Route::get('/tracking-after', function () {
     return view('landing/tracking-after');
 });
 
+Route::get('/register', function () {
+    return view('auths/register');
+});
+
+Route::get('/login', function () {
+    return view('auths/login');
+});
+
+Route::get('/forgotPassword', function () {
+    return view('auths/forgotPassword');
+});
+
+Route::get('/forgotPasswordLink', function () {
+    return view('auths/forgotPasswordLink');
+});
+
 Route::resource('/notaris', \App\Http\Controllers\enotariscontroller::class);
 Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
 
