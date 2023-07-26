@@ -15,7 +15,7 @@ class enotariscontroller extends Controller
     public function index()
     {
         $posts = enotaris::latest()->paginate(5);
-        return \view('notaris.index', compact('posts'));
+        return view('notaris.index', compact('posts'));
 
     }
 
