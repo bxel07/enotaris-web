@@ -1,0 +1,279 @@
+:root {
+  --main-white: #FEFCFB;
+  --main-orange: #FF9505;  
+  --main-black: #222222;
+  --light-orange: #ffe3bd; 
+
+  --trans-02: all 0.2s ease;
+  --trans-03: all 0.3s ease;
+  --trans-04: all 0.4s ease;
+  --trans-05: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    color: var(--main-white);
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;  
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin:0;
+
+}
+
+/* || SIDEBAR */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 250px;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--main-black);
+    transition: var(--trans-05);
+    
+}
+.sidebar.close {
+    width: 78px;
+}
+
+.sidebar.close .sidebar__title {
+    display: none;
+    
+}
+
+.sidebar .sidebar__title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: var(--trans-05);
+    white-space: nowrap;
+}
+
+.sidebar__title h4 span {
+ color: var(--main-orange);
+}
+
+.sidebar .sidebar__user .sidebar__toggle {
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    color: var(--main-white);
+    background-color: var(--main-orange);
+    border-radius:50%;
+    transform: translateY(-50%) rotate(180deg);
+    z-index: 100;
+    transition: var(--trans-05);
+}
+
+.sidebar.close .sidebar__user .sidebar__toggle {
+    transform: translateY(-50%);
+    transition: var(--trans-05);
+    z-index: 100;
+}
+
+.sidebar__user {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 2px solid var(--main-white);
+    border-bottom: 2px solid var(--main-white);
+    transition: var(--trans-04);
+    white-space: nowrap;
+}
+.user {
+    height: 20px;
+    width: 20px;
+}
+.sidebar.close .sidebar__user{
+    margin-top:54px;
+    padding: 22px 0;
+    transition: var(--trans-04);
+}
+.sidebar.close .sidebar__user span {
+    display: none;
+}
+
+.sidebar__navmenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+
+.sidebar__navmenu li:hover {
+    background-color: var(--main-orange);
+}
+.sidebar__navmenu li {    
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 62px;
+    transition: var(--trans-04);
+}
+
+
+.sidebar__navmenu li .sidebar__iconnav {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar.close .sidebar__navmenu li{
+    padding-left: 25px;
+}
+
+.sidebar.close .sidebar__navmenu li span {
+    display: none;
+    transition: var(--trans-04);
+}
+
+.sidebar__navmenu li a {
+    color: var(--main-white);
+    height: 100%;
+    text-decoration: none;
+    display: flex;;
+    border-radius: 6px;
+    transition: var(--trans-04);
+    white-space: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+/* || MAIN */
+main {
+    left: 250px;
+    width: calc(100% - 250px);
+    background-color: var(--main-white);
+    transition: var(--trans-05);
+    padding: 20px 0 0 30px
+}
+
+.sidebar.close ~ main {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+main .dasboard__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    color: var(--main-black);
+
+}
+
+main .dasboard__data {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 100px;
+    justify-content: center;
+
+}
+
+main .dasboard__datadoc, main .dasboard__dataproc, main .dasboard__datacomp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    background-color: var(--main-orange);
+    color: var(--main-black);
+    gap: 10px;
+}
+
+.dasboard__datadesc {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dasboard__datadesc span {
+    font-size: larger;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.dasboard__dataicon {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dasboard__dataicon .dasboard__icondata {
+    height: 80px;
+    height: 60px;
+}
+
+.dasboard__document{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dasboard__document .dasboard__judul {
+    margin-top: 20px;
+    color: var(--main-black);
+
+}
+
+.dasboard__document .dasboard__button_and_search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+
+}
+
+.dasboard__document .dasboard__button_and_search button {
+    border: none;
+    padding: 10px;
+    background-color: var(--light-orange);
+}
+
+.dasboard__document .dasboard__button_and_search button:hover {
+    filter: brightness(110%);
+}
+
+.dasboard__document .dasboard__button_and_search button a {
+    color: var(--main-black);
+    text-decoration: none;
+}
+
+table td .dasboard-icon {
+    width: 20px;
+    height: 25px;
+}
+
+table td .dasboard-icon:hover {
+    filter: brightness(170%);
+}
+
+.page-link{
+  color: var(--main-orange);  
+}
