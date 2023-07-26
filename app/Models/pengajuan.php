@@ -5,18 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class dokumen extends Model
+class pengajuan extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        "id_customer",
+        "nama",
+        "alamat",
+        "email",
+        "telepon",
+        "jenis_perusahaan",
+        "jenis_pengajuan",
         'ktp',
         'npwp',
         'sertifikattanah',
-        'enotaris_id'
+        "status"
     ];
-
-    public function enotaris() {
-        $this->belongsTo(enotaris::class);
-    }
 }

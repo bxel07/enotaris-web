@@ -105,7 +105,7 @@ class dokumencontroller extends Controller
             $post->update([
                 'ktp' => $ktp->hashName(),
                 'npwp' => $npwp->hashName(),
-                'sertifikattanah' => $sertifikattanah->hashName()
+                'sertifikattanah' => $sertifikattanah->hashName(),
             ]);
 
             // melakukan redirect
@@ -121,13 +121,10 @@ class dokumencontroller extends Controller
     public function destroy(string $id):RedirectResponse
     {
         $post = dokumen::findOrFail($id);
-
         //delete dokumen
-
-        Storage::delete('public/ktp'. $post->ktp);
-        Storage::delete('public/npwp'. $post->npwp);
-        Storage::delete('public/sertifikattanah'. $post->sertifikattanah);
-
+        Storage::delete('public/ktp/'. $post->ktp);
+        Storage::delete('public/npwp/'. $post->npwp);
+        Storage::delete('public/sertifikattanah/'. $post->sertifikattanah);
         $post->delete();
         return redirect()->route('dokumen.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }

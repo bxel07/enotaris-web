@@ -16,4 +16,8 @@ class enotaris extends Model
         'telepon',
         'status'
     ];
+
+    public function dokumen() {
+        $this->hasMany(dokumen::class);
+    }
 }
