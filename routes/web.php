@@ -47,10 +47,10 @@ Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
 Route::resource('/landing', \App\Http\Controllers\landing::class);
 
 
-// Route::middleware('auth')->post('logout', [AuthController::class, 'logout']);
+Route::middleware('auth')->post('logout', [AuthController::class, 'logout']);
 
-// Route::get('login', [AuthController::class, 'showlogin'])->name('login');
-// Route::get('register', [AuthController::class, 'showregister'])->name('register');
+Route::get('login', [AuthController::class, 'showlogin'])->name('login');
+Route::get('register', [AuthController::class, 'showregister'])->name('register');
 
-// Route::post('login', [AuthController::class, 'login']);
-// Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
