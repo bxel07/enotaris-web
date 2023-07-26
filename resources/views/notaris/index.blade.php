@@ -15,7 +15,7 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar">
+        <aside class="sidebar close">
             <div class="sidebar__title">
                 <h4>Notaris <span>Digital</span></h4>
             </div>
@@ -90,7 +90,7 @@
                     <h2>Data Dokumen</h2>
                 </div>
                 <div class="dasboard__button_and_search">
-                    <button><a href="#">Tambah Dokumen</a></button>
+                    <button><a href="{{route("notaris.create")}}"  c>Tambah Dokumen</a></button>
                     <div class="d-flex">
                         <input class="form-control me 2" type="search" placeholder="search">
                         </input>

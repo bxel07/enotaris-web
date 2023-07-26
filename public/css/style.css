@@ -37,7 +37,7 @@ aside {
     flex-direction: column;
     position: relative;
     width: 250px;
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
     background-color: var(--main-black);
     transition: var(--trans-05);
@@ -276,4 +276,55 @@ table td .dasboard-icon:hover {
 
 .page-link{
   color: var(--main-orange);  
+}
+
+
+@media screen and (min-width :768px) and (max-width :1200px) {
+    main .dasboard__data {
+        gap:10px;
+    } 
+
+}
+
+@media screen and (max-width :767.98px) {
+    .container, .sidebar.close{
+        height: auto;
+    }
+
+    main .dasboard__data {
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+    } 
+
+        .sidebar {
+        width: 100px;
+    }
+
+    .sidebar.close {
+        opacity: 1;
+    }
+    .sidebar.close .sidebar__title {
+    display: none;
+    
+}
+
+.sidebar .sidebar__user .sidebar__toggle {
+    display: none;
+}
+
+.sidebar.close .sidebar__user .sidebar__toggle {
+    display: none;
+}
+
+.sidebar .sidebar__user{
+    margin-top:54px;
+    padding: 22px 0;
+    transition: var(--trans-04);
+}
+.sidebar .sidebar__user span {
+    display: none;
+}
+
+
 }
