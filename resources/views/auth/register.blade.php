@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Register</title>
@@ -22,4 +22,4 @@
     <button type="submit">Register</button>
 </form>
 </body>
-</html>
+</html> -->
