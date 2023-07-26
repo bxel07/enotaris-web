@@ -246,8 +246,6 @@ main .dasboard__datadoc, main .dasboard__dataproc, main .dasboard__datacomp {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
-    
-
 }
 
 .dasboard__document .dasboard__button_and_search button {
@@ -278,6 +276,106 @@ table td .dasboard-icon:hover {
   color: var(--main-orange);  
 }
 
+/* || CREATE */
+body section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-orange);
+}
+
+body section .section__backbutton {
+    position: absolute;
+    padding: 5px 3px;
+    top: 20px;
+    left: 20px;
+    background-color: var(--light-orange);
+}
+
+body section .section__backbutton a {
+    text-decoration: none;   
+}
+
+body section .section__backbutton a:hover {
+    filter: brightness(150%);
+}
+
+body section .section__backbutton .back-button {
+    width: 25px;
+    height: 25px;
+    
+}
+
+body section .card {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: auto;
+    background-color: var(--light-orange);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+body section .card_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 50vw;
+    height: auto;
+    background-color: var(--light-orange);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+body section .card .card__formselect{
+    margin-bottom: 30px;
+}
+
+body section .card select {
+    margin-top: 20px;
+    height: 40px;
+    color: var(--main-orange);
+    font-size: large;
+    outline: none;
+}
+
+body section .card select option {
+    font-size: large;
+}
+
+section .card_form .form .form_doc, section .card_form .form .form_file {  
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+body section .card .card__button, body section .card_form .card__formbutton {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+body section .card button, body section .card_form button {
+    width: 80px;
+    height: 40px;
+    background-color: var(--main-orange);
+    border: none;
+}
+
+body section .card button:hover, body section .card_form button:hover {
+    filter: brightness(120%);
+}
+
+body section .card button a, body section .card_form button a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
 
 @media screen and (min-width :768px) and (max-width :1200px) {
     main .dasboard__data {
@@ -290,12 +388,6 @@ table td .dasboard-icon:hover {
     .container, .sidebar.close{
         height: auto;
     }
-
-    main .dasboard__data {
-        flex-direction: column;
-        align-items: center;
-        gap:10px;
-    } 
 
         .sidebar {
         width: 100px;
@@ -325,6 +417,32 @@ table td .dasboard-icon:hover {
 .sidebar .sidebar__user span {
     display: none;
 }
+
+    main .dasboard__data {
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+    } 
+
+    .dasboard__document .dasboard__button_and_search{
+    gap: 10px;
+}
+
+
+    .dasboard__document .dasboard__button_and_search .search {
+        width: 150px;
+    }
+
+    .dasboard__document .dasboard__button_and_search .searchbutton{
+    border: none;
+    background-color: var(--light-orange);
+}
+
+    body section .card {
+    width: 80vw;
+    height: auto;
+     padding: 10px 20px;
+    }
 
 
 }
