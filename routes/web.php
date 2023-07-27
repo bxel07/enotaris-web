@@ -26,17 +26,12 @@ Route::put('/pengajuan/updatedokumen/{id}', [\App\Http\Controllers\pengajuancont
 
 //  jika user belum login
 Route::group(['middleware' => 'guest'], function() {
-    Route::get('/', function () {
-        return view('landing/index');
-    });
 
-    Route::get('/tracking', function () {
-        return view('landing/tracking');
-    });
+    // Landing & tracking data
 
-    Route::get('/tracking-after', function () {
-        return view('landing/tracking-after');
-    });
+    Route::get('/' ,[\App\Http\Controllers\landing::class, 'index']);
+    Route::get('/tracking' ,[\App\Http\Controllers\landing::class, 'tracking']);
+    Route::match(['get', 'post'], '/dotracking', [\App\Http\Controllers\landing::class, 'dotracking'])->name('dotracking');
 
     // auth controller
     Route::get('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
