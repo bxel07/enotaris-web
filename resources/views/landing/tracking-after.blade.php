@@ -35,7 +35,7 @@
             <i class="bi bi-phone"></i> +1 5589 55488 55
         </div>
         <div class="d-none d-lg-flex social-links align-items-center">
-            <a href="#">09:00-16:00</i></a>
+            <a href="#">09:00-16:00</a>
         </div>
     </div>
 </div>
@@ -64,37 +64,45 @@
 </section><!-- End Hero -->
 
 <main id="main">
-
     <!--  -->
     <section id="tracking">
         <div class="container text-center">
             <div class="row">
-                <div class="col">
-                </div>
+                <div class="col"></div>
                 <div class="col-9">
-                    <a href="" class="btn-get-started disabled scrollto">Track Progress</a>
-                    <form action="" method="GET">
-                        <input class="form-control" type="text" placeholder="Client Number : 12345678" aria-label="default input example">
+                    <a href="#" class="btn-get-started disabled scrollto">Track Progress</a>
+                    <form action="{{ route('dotracking') }}" method="POST">
+                        @csrf <!-- CSRF token -->
+                        <input class="form-control" type="text" placeholder="Client Number : 12345678" name="id_customer" aria-label="default input example">
+                        <button type="submit" class="btn-get-started scrollto">Search</button>
                     </form>
-                    <h4>STATUS</h4>
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            Client Number : 12345678
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Your Document is on progress</p>
-                            <p class="card-text">Updated at 13:00 20/07/2023</p>
-                        </div>
-                    </div>
-                    <a href="#" class="btn-get-started scrollto">search</a>
+                    <h4 class="mt-4">STATUS</h4>
+                    @if(isset($results) && count($results) > 0)
+                        @foreach($results as $result)
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    Client Number: {{ $result['id_customer'] }}
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        @foreach($result['dokumens'] as $documentStatus)
+                                            <li class="list-group-item">{{ $documentStatus }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <p class="card-text mt-2">Status: {{ $result['status'] }}</p>
+                                    <p class="card-text">Updated at {{ $result['updated_at'] }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>No results found.</p>
+                    @endif
                 </div>
-                <div class="col">
-                </div>
+                <div class="col"></div>
             </div>
         </div>
     </section>
     <!--  -->
-
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
