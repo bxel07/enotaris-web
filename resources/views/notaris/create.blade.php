@@ -1,98 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tambah Data Post - SantriKoding.com</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>input data | Notaris Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
-<body style="background: lightgray">
 
-<div class="container mt-5 mb-5">
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card border-0 shadow-sm rounded">
-                    <div class="card-body">
-                        <form action="{{ route('notaris.store') }}" method="POST" enctype="multipart/form-data">
-
-                            @csrf
-                            <div class="form-group">
-                                <label class="font-weight-bold">Nama</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama Customer">
-
-                                <!-- error message untuk title -->
-                                @error('nama')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
+<body>
+    <section class="container ">
+        <div class="back position-absolute ">
+            <button class="back-button text-center border"><a class="back-link fw-bold"
+                    href="generate.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path
+                            d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
+                    </svg></a></button>
+         </div>
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong">
+                        <div class="card-body p-5 text-center">
+                            <h3 class="mb-5">Pilih Perusahaan</h3>
+                                <select class="form-select">
+                                    <option>CV</option>
+                                    <option>PT</option>
+                                </select>>
+                                <div class="text-end">
+                                    <button class="button-ok"><a class="link-website" href="inputdatajenisdokumen.html">OK</a></button>
                                 </div>
-                                @enderror
                             </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">Alamat</label>
-                                <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{ old('alamat') }}" placeholder="Masukkan Alamat Customer">
-
-                                <!-- error message untuk title -->
-                                @error('alamat')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">Email</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Masukkan Alamat Email">
-
-                                <!-- error message untuk title -->
-                                @error('email')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">Telepon</label>
-                                <input type="number" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ old('telepon') }}" placeholder="Masukkan Alamat Email">
-
-                                <!-- error message untuk title -->
-                                @error('telepon')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="font-weight-bold">Status</label>
-                                <select class="form-control @error('status') is-invalid @enderror" name="status" placeholder="Select Status">
-                                    <option value="inprogress" {{ old('status') == 'inprogress' ? 'selected' : '' }}>In Progress</option>
-                                    <option value="valid" {{ old('status') == 'valid' ? 'selected' : '' }}>Valid</option>
-                                    <option value="failed" {{ old('status') == 'failed' ? 'selected' : '' }}>Failed</option>
-                                </select>
-
-                                <!-- error message for status -->
-                                @error('status')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-                            <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
-                            <button type="reset" class="btn btn-md btn-warning">RESET</button>
-
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
