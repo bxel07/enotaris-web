@@ -14,9 +14,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::resource('/notaris', \App\Http\Controllers\enotariscontroller::class);
 Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
@@ -26,14 +26,25 @@ Route::put('/pengajuan/updatedokumen/{id}', [\App\Http\Controllers\pengajuancont
 
 //  jika user belum login
 Route::group(['middleware' => 'guest'], function() {
-    Route::get('/', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
-    Route::post('/', [\App\Http\Controllers\AuthController::class, 'dologin']);
+    Route::get('/', function () {
+        return view('landing/index');
+    });
+
+    Route::get('/tracking', function () {
+        return view('landing/tracking');
+    });
+
+    Route::get('/tracking-after', function () {
+        return view('landing/tracking-after');
+    });
+
+    // auth controller
+    Route::get('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
+    Route::post('/login', [\App\Http\Controllers\AuthController::class, 'dologin']);
     Route::get('forget-password', [\App\Http\Controllers\AuthController::class, 'showForgetPasswordForm'])->name('forget.password.get');
     Route::post('forget-password', [\App\Http\Controllers\AuthController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
     Route::get('reset-password/{token}', [\App\Http\Controllers\AuthController::class, 'showResetPasswordForm'])->name('reset.password.get');
     Route::post('reset-password', [\App\Http\Controllers\AuthController::class, 'submitResetPasswordForm'])->name('reset.password.post');
-
-
 });
 
 // untuk superadmin dan pegawai
