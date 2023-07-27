@@ -48,7 +48,7 @@ class AuthController extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function showForgetPasswordForm() {
@@ -113,7 +113,7 @@ class AuthController extends Controller
         // Delete the used token from the password_resets table
         DB::table('password_resets')->where('email', $request->email)->delete();
 
-        return redirect('/')->with('message', 'Your password has been changed successfully!');
+        return redirect('/login')->with('message', 'Your password has been changed successfully!');
     }
 
 
