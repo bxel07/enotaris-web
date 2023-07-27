@@ -33,4 +33,3 @@ Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
 Route::resource('/pengajuan' , \App\Http\Controllers\pengajuancontroller::class);
 Route::get('/pengajuan/editdokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'editdokumen'])->name('pengajuan.editdokumen');
 Route::put('/pengajuan/updatedokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'updatedokumen'])->name('pengajuan.updatedokumen');
-
