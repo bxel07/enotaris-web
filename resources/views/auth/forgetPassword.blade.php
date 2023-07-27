@@ -14,6 +14,7 @@
                         @endif
                         <div class="row g-3">
                             <form action="{{ route('forget.password.post') }}" method="post">
+                                @csrf
                                 <div class="col-12">
                                     <input type="email" id="email" name="email" class="form-control form-control-lg"
                                         placeholder="Email address" required autofocus />
