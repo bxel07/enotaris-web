@@ -28,7 +28,7 @@ Route::get('/tracking-after', function () {
 
 Route::resource('/notaris', \App\Http\Controllers\enotariscontroller::class);
 Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
-Route::resource('/landing', \App\Http\Controllers\landing::class);
+
 
 Route::resource('/pengajuan' , \App\Http\Controllers\pengajuancontroller::class);
 Route::get('/pengajuan/editdokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'editdokumen'])->name('pengajuan.editdokumen');
