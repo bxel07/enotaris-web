@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="images/favicon.png" rel="icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -23,7 +23,7 @@
     <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
 </head>
 
 <body>
