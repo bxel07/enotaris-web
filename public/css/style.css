@@ -1,20 +1,20 @@
 :root {
-  --main-white: #FEFCFB;
-  --main-orange: #FF9505;  
-  --main-black: #222222;
-  --light-orange: #ffe3bd; 
+    --main-white: #FEFCFB;
+    --main-orange: #FF9505;
+    --main-black: #222222;
+    --light-orange: #ffe3bd;
 
-  --trans-02: all 0.2s ease;
-  --trans-03: all 0.3s ease;
-  --trans-04: all 0.4s ease;
-  --trans-05: all 0.5s ease;
+    --trans-02: all 0.2s ease;
+    --trans-03: all 0.3s ease;
+    --trans-04: all 0.4s ease;
+    --trans-05: all 0.5s ease;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 body {
     color: var(--main-white);
@@ -22,7 +22,7 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    max-width: 100%;  
+    max-width: 100%;
     display: flex;
     position: relative;
     padding: 0;
@@ -41,7 +41,7 @@ aside {
     box-sizing: border-box;
     background-color: var(--main-black);
     transition: var(--trans-05);
-    
+
 }
 .sidebar.close {
     width: 78px;
@@ -49,7 +49,7 @@ aside {
 
 .sidebar.close .sidebar__title {
     display: none;
-    
+
 }
 
 .sidebar .sidebar__title {
@@ -63,7 +63,7 @@ aside {
 }
 
 .sidebar__title h4 span {
- color: var(--main-orange);
+    color: var(--main-orange);
 }
 
 .sidebar .sidebar__user .sidebar__toggle {
@@ -124,7 +124,7 @@ aside {
 .sidebar__navmenu li:hover {
     background-color: var(--main-orange);
 }
-.sidebar__navmenu li {    
+.sidebar__navmenu li {
     display: flex;
     list-style: none;
     cursor: pointer;
@@ -246,8 +246,6 @@ main .dasboard__datadoc, main .dasboard__dataproc, main .dasboard__datacomp {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
-    
-
 }
 
 .dasboard__document .dasboard__button_and_search button {
@@ -275,14 +273,114 @@ table td .dasboard-icon:hover {
 }
 
 .page-link{
-  color: var(--main-orange);  
+    color: var(--main-orange);
+}
+
+/* || CREATE */
+body section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-orange);
+}
+
+body section .section__backbutton {
+    position: absolute;
+    padding: 5px 3px;
+    top: 20px;
+    left: 20px;
+    background-color: var(--light-orange);
+}
+
+body section .section__backbutton a {
+    text-decoration: none;
+}
+
+body section .section__backbutton a:hover {
+    filter: brightness(150%);
+}
+
+body section .section__backbutton .back-button {
+    width: 25px;
+    height: 25px;
+
+}
+
+body section .card {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: auto;
+    background-color: var(--light-orange);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+body section .card_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 50vw;
+    height: auto;
+    background-color: var(--light-orange);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+body section .card .card__formselect{
+    margin-bottom: 30px;
+}
+
+body section .card select {
+    margin-top: 20px;
+    height: 40px;
+    color: var(--main-orange);
+    font-size: large;
+    outline: none;
+}
+
+body section .card select option {
+    font-size: large;
+}
+
+section .card_form .form .form_doc, section .card_form .form .form_file {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+body section .card .card__button, body section .card_form .card__formbutton {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+body section .card button, body section .card_form button {
+    width: 80px;
+    height: 40px;
+    background-color: var(--main-orange);
+    border: none;
+}
+
+body section .card button:hover, body section .card_form button:hover {
+    filter: brightness(120%);
+}
+
+body section .card button a, body section .card_form button a {
+    text-decoration: none;
+    color: var(--main-white);
 }
 
 
 @media screen and (min-width :768px) and (max-width :1200px) {
     main .dasboard__data {
         gap:10px;
-    } 
+    }
 
 }
 
@@ -291,13 +389,7 @@ table td .dasboard-icon:hover {
         height: auto;
     }
 
-    main .dasboard__data {
-        flex-direction: column;
-        align-items: center;
-        gap:10px;
-    } 
-
-        .sidebar {
+    .sidebar {
         width: 100px;
     }
 
@@ -305,26 +397,52 @@ table td .dasboard-icon:hover {
         opacity: 1;
     }
     .sidebar.close .sidebar__title {
-    display: none;
-    
-}
+        display: none;
 
-.sidebar .sidebar__user .sidebar__toggle {
-    display: none;
-}
+    }
 
-.sidebar.close .sidebar__user .sidebar__toggle {
-    display: none;
-}
+    .sidebar .sidebar__user .sidebar__toggle {
+        display: none;
+    }
 
-.sidebar .sidebar__user{
-    margin-top:54px;
-    padding: 22px 0;
-    transition: var(--trans-04);
-}
-.sidebar .sidebar__user span {
-    display: none;
-}
+    .sidebar.close .sidebar__user .sidebar__toggle {
+        display: none;
+    }
+
+    .sidebar .sidebar__user{
+        margin-top:54px;
+        padding: 22px 0;
+        transition: var(--trans-04);
+    }
+    .sidebar .sidebar__user span {
+        display: none;
+    }
+
+    main .dasboard__data {
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+    }
+
+    .dasboard__document .dasboard__button_and_search{
+        gap: 10px;
+    }
+
+
+    .dasboard__document .dasboard__button_and_search .search {
+        width: 150px;
+    }
+
+    .dasboard__document .dasboard__button_and_search .searchbutton{
+        border: none;
+        background-color: var(--light-orange);
+    }
+
+    body section .card {
+        width: 80vw;
+        height: auto;
+        padding: 10px 20px;
+    }
 
 
 }
