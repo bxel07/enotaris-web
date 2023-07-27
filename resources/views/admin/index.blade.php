@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container container-secondary">
+    <div class="container">
         <aside class="sidebar close">
             <div class="sidebar__title">
                 <h4>Notaris <span>Digital</span></h4>
@@ -23,7 +23,7 @@
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
                 <div class="sidebar__userrole">
-                    <span>super-admin</span>
+                    <span>admin</span>
                     <span class="sidebar__username">Zulfian Nafis</span>
                 </div>  
                  <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
@@ -65,11 +65,35 @@
             </nav>
         </aside>
         <main class="dasboard">
-            <div class="dasboard__log">
-                <div class="dasboard__judul">
-                    <h2>Log Activity</h2>
+            <div class="dasboard__info">
+                <h2>Dasboard</h2>
+                <div class="dasboard__data">
+                    <div class="dasboard__datadoc">
+                        <div class="dasboard__datadesc"><span>15</span> <span>New doc</span></div>
+                        <div class="dasboard__dataicon">
+                            <img src="{{ asset('images/add.png') }}" alt="add" class="dasboard__icondata">
+                        </div>
+                    </div>
+                    <div class="dasboard__dataproc">
+                        <div class="dasboard__datadesc"><span>30</span> <span>On Progress</span></div>
+                        <div class="dasboard__dataicon">
+                            <img src="{{ asset('images/Document.png') }}" alt="document" class="dasboard__icondata">
+                        </div>
+                    </div>
+                    <div class="dasboard__datacomp">
+                        <div class="dasboard__datadesc"><span>10</span> <span>Complete</span></div>
+                        <div class="dasboard__dataicon">
+                            <img src="{{ asset('images/file.png') }}" alt="file" class="dasboard__icondata">
+                        </div>
+                    </div>
                 </div>
-                <div class="dasboard__search">
+            </div>
+            <div class="dasboard__document">
+                <div class="dasboard__judul">
+                    <h2>Data Dokumen</h2>
+                </div>
+                <div class="dasboard__button_and_search">
+                    <button><a href="{{route("notaris.create")}}">Tambah Dokumen</a></button>
                     <div class="d-flex search">
                         <input class="form-control me 2" type="search" placeholder="search">
                         </input>
@@ -92,20 +116,16 @@
                                 <td>Mark</td>
                                 <td>Lamongan</td>
                                 <td class="failed-status fw-bold">FAILED</td>
-                              
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Jacob</td>
                                 <td>Surabaya</td>
-                                <td class="progress-status">ON PROGRESS</td>
-                               
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td colspan="2">Larry the Bird</td>
                                 <td class="succes-status">SUCCESS</td>
-                               
                             </tr>
                         </tbody>
                     </table>

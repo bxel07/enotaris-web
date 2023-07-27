@@ -23,10 +23,10 @@
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
                 <div class="sidebar__userrole">
-                    <span>super-admin</span>
+                    <span>admin</span>
                     <span class="sidebar__username">Zulfian Nafis</span>
                 </div>  
-                 <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
+                <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
             </div>
             <nav>
                 <ul class="sidebar__navmenu">
@@ -67,7 +67,7 @@
         <main class="dasboard">
             <div class="dasboard__log">
                 <div class="dasboard__judul">
-                    <h2>Log Activity</h2>
+                    <h2>Data Dokumen</h2>
                 </div>
                 <div class="dasboard__search">
                     <div class="d-flex search">
@@ -84,6 +84,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -92,20 +93,29 @@
                                 <td>Mark</td>
                                 <td>Lamongan</td>
                                 <td class="failed-status fw-bold">FAILED</td>
-                              
+                                <td class="action_table">
+                                    <a class="a-preview" href="">preview</a>
+                                    <a href="" class="a-generate">generate</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Jacob</td>
                                 <td>Surabaya</td>
                                 <td class="progress-status">ON PROGRESS</td>
-                               
+                                <td class="action_table">
+                                    <a class="a-preview" href="">preview</a>
+                                    <a href="" class="a-generate">generate</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td colspan="2">Larry the Bird</td>
                                 <td class="succes-status">SUCCESS</td>
-                               
+                                <td class="action_table">
+                                    <a class="a-preview" href="">preview</a>
+                                    <a href="" class="a-generate">generate</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -22,7 +22,10 @@
 
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
-                <span>Zulfian Nafis</span>
+                <div class="sidebar__userrole">
+                    <span>super-admin</span>
+                    <span class="sidebar__username">Zulfian Nafis</span>
+                </div>  
                  <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
             </div>
             <nav>

@@ -58,7 +58,7 @@ class enotariscontroller extends Controller
     public function show(string $id)
     {
         $post = enotaris::findOrFail($id);
-        return view('notaris.index', compact('posts'));
+        return view('notaris.show', compact('post'));
 
     }
 
@@ -107,13 +107,5 @@ class enotariscontroller extends Controller
         $post->delete();
         return redirect()->route('notaris.index')->with(['success' => 'Data Berhasil Dihapus!']);
 
-    }
-
-    public function log(){
-        return view('notaris.log');
-    }
-
-    public function generate(){
-        return view('notaris.generate');
     }
 }

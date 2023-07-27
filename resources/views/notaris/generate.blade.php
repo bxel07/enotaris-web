@@ -22,7 +22,10 @@
 
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
-                <span>Zulfian Nafis</span>
+                <div class="sidebar__userrole">
+                    <span>super-admin</span>
+                    <span class="sidebar__username">Zulfian Nafis</span>
+                </div>  
                 <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
             </div>
             <nav>
@@ -91,8 +94,8 @@
                                 <td>Lamongan</td>
                                 <td class="failed-status fw-bold">FAILED</td>
                                 <td class="action_table">
-                                    <a class="a-edit" href="">preview</a>
-                                    <a href="" class="a-delete">generate</a>
+                                    <a class="a-preview" href="">preview</a>
+                                    <a href="" class="a-generate">generate</a>
                                 </td>
                             </tr>
                             <tr>
@@ -101,8 +104,8 @@
                                 <td>Surabaya</td>
                                 <td class="progress-status">ON PROGRESS</td>
                                 <td class="action_table">
-                                    <a class="a-edit" href="">preview</a>
-                                    <a href="" class="a-delete">generate</a>
+                                    <a class="a-preview" href="">preview</a>
+                                    <a href="" class="a-generate">generate</a>
                                 </td>
                             </tr>
                             <tr>
@@ -110,8 +113,8 @@
                                 <td colspan="2">Larry the Bird</td>
                                 <td class="succes-status">SUCCESS</td>
                                 <td class="action_table">
-                                    <a class="a-edit" href="">preview</a>
-                                    <a href="" class="a-delete">generate</a>
+                                    <a class="a-preview" href="">preview</a>
+                                    <a href="" class="a-generate">generate</a>
                                 </td>
                             </tr>
                         </tbody>

@@ -18,9 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/notaris/log', [\App\Http\Controllers\enotariscontroller::class, 'log']);
-Route::get('/notaris/generate', [\App\Http\Controllers\enotariscontroller::class, 'generate']);
-
 Route::resource('/notaris', \App\Http\Controllers\enotariscontroller::class);
 Route::resource('/dokumen', \App\Http\Controllers\dokumencontroller::class);
 

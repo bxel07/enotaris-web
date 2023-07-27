@@ -22,7 +22,10 @@
 
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
-                <span>Zulfian Nafis</span>
+                <div class="sidebar__userrole">
+                    <span>super-admin</span>
+                    <span class="sidebar__username">Zulfian Nafis</span>
+                </div>  
                 <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
             </div>
             <nav>
@@ -77,41 +80,32 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Id</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Lamongan</td>
-                                <td class="failed-status fw-bold">FAILED</td>
-                                <td class="action_table">
-                                    <a class="a-edit" href="">preview</a>
-                                    <a href="" class="a-delete">generate</a>
+                                <td class="column__folder">
+                                    <a class="a-folder" href="">
+                                        <img src="{{ asset('images/folder2.png') }}" alt="edit" class="dasboard-icon">
+                                    </a> 
+                                    <span>AKTA</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Surabaya</td>
-                                <td class="progress-status">ON PROGRESS</td>
-                                <td class="action_table">
-                                    <a class="a-edit" href="">preview</a>
-                                    <a href="" class="a-delete">generate</a>
+                                                                <td class="column__folder">
+                                    <a class="a-folder" href="">
+                                        <img src="{{ asset('images/folder2.png') }}" alt="edit" class="dasboard-icon">
+                                    </a> 
+                                    <span>BPN</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td class="succes-status">SUCCESS</td>
-                                <td class="action_table">
-                                    <a class="a-edit" href="">preview</a>
-                                    <a href="" class="a-delete">generate</a>
+                                <td class="column__folder">
+                                    <a class="a-folder" href="">
+                                        <img src="{{ asset('images/folder2.png') }}" alt="edit" class="dasboard-icon">
+                                    </a> 
+                                    <span>SERTIFIKAT</span>
                                 </td>
                             </tr>
                         </tbody>
