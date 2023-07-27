@@ -92,8 +92,7 @@
                 <div class="dasboard__judul">
                     <h2>Data Dokumen</h2>
                 </div>
-                <div class="dasboard__button_and_search">
-                    <button><a href="{{route("notaris.create")}}">Tambah Dokumen</a></button>
+                <div class="dasboard__search">
                     <div class="d-flex search">
                         <input class="form-control me 2" type="search" placeholder="search">
                         </input>
