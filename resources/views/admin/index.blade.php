@@ -23,10 +23,10 @@
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
                 <div class="sidebar__userrole">
-                    <span>admin</span>
+                    <span>super-admin</span>
                     <span class="sidebar__username">Zulfian Nafis</span>
-                </div>  
-                 <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
+                </div>
+                <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
             </div>
             <nav>
                 <ul class="sidebar__navmenu">
@@ -120,6 +120,7 @@
                                 <th scope="row">2</th>
                                 <td>Jacob</td>
                                 <td>Surabaya</td>
+                                <td class="progress-status">ON PROGRESS</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
