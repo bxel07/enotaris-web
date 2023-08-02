@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use App\Models\User;
 use App\Models\Role;
@@ -30,12 +31,16 @@ class AuthController extends Controller
             // buat ulang session login
             $request->session()->regenerate();
 
+            // Store the username in the session
+            $username = Auth::user()->firstname;
+            var_dump($username);
+
             if (auth()->user()->role_id === 1) {
                 // jika user superadmin
-                return redirect()->intended('/superadmin');
+                return redirect()->intended('/superadmin/dashboard');
             } else {
                 // jika user pegawai
-                return redirect()->intended('/pegawai');
+                return redirect()->intended('/pegawai/dashboard');
             }
         }
 
