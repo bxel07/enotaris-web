@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\pengajuan;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -13,11 +15,43 @@ class pengajuancontroller extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = pengajuan::latest()->paginate(5);
-        return \view('pengajuan/index', compact('posts'));
+        $customer_id = $request->input('customer_id');
+
+        if ($customer_id) {
+            // If a search is performed, get the search results
+            $datacustomer = pengajuan::where('id_customer', 'like', '%' . $customer_id . '%')->get();
+            return view('admin.index', compact('datacustomer'));
+        } else {
+            // If no search, fetch all data to display
+            $posts = pengajuan::latest()->paginate(5);
+           $ktp = pengajuan::count('ktp');
+           $npwp = pengajuan::count('npwp');
+           $sertifikat = pengajuan::count('sertifikattanah');
+
+           $result = [
+               'valid' => 0,
+               'inprogress' => 0,
+               'jumlah' => $ktp + $npwp + $sertifikat
+           ];
+           foreach ($posts as $post) {
+
+               // Count occurrences of status
+               if ($post->status === 'valid') {
+                   $result['valid']++;
+               } elseif ($post->status === 'inprogress') {
+                   $result['inprogress']++;
+               }
+           }
+            return view('admin.index', compact('posts', 'result'));
+        }
+
+
+
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -77,18 +111,18 @@ class pengajuancontroller extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('pengajuan.index')->with(['success' => 'Data customer berhasil disimpan!!']);
+        return redirect()->route('notaris.index')->with(['success' => 'Data customer berhasil disimpan!!']);
     }
 
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        $posts = pengajuan::findOrFail($id);
-        return \view('pengajuan.show', compact('posts'));
-    }
+//    public function show(string $id)
+//    {
+//        $posts = pengajuan::findOrFail($id);
+//        return \view('pengajuan.show', compact('posts'));
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -133,7 +167,7 @@ class pengajuancontroller extends Controller
 
             ]);
             // melakukan redirect
-            return redirect()->route('pengajuan.index')->with(['success' => 'Dokumen Berhasil Diupdate!']);
+            return redirect()->route('notaris.index')->with(['success' => 'Dokumen Berhasil Diupdate!']);
 
     }
 
@@ -174,7 +208,7 @@ class pengajuancontroller extends Controller
         $post->status = $request->status;
         $post->save();
 
-        return redirect()->route('pengajuan.index')->with(['success' => 'Dokumen Berhasil Diupdate!']);
+        return redirect()->route('notaris.index')->with(['success' => 'Dokumen Berhasil Diupdate!']);
     }
 
     /**
@@ -198,6 +232,6 @@ class pengajuancontroller extends Controller
         }
 
         $post->delete();
-        return redirect()->route('pengajuan.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect()->route('notaris.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

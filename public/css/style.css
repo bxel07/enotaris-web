@@ -3,6 +3,8 @@
     --main-orange: #FF9505;
     --main-black: #222222;
     --light-orange: #ffe3bd;
+    --main-green:#00FF1A;
+    --light-green:#c4ffca;
 
     --trans-02: all 0.2s ease;
     --trans-03: all 0.3s ease;
@@ -99,6 +101,16 @@ aside {
     transition: var(--trans-04);
     white-space: nowrap;
 }
+
+.sidebar__user .sidebar__userrole {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar__user .sidebar__userrole .sidebar__username{
+    font-weight: bold;
+}
 .user {
     height: 20px;
     width: 20px;
@@ -167,7 +179,7 @@ main {
     width: calc(100% - 250px);
     background-color: var(--main-white);
     transition: var(--trans-05);
-    padding: 20px 0 0 30px
+    padding: 20px 30px 0 30px
 }
 
 .sidebar.close ~ main {
@@ -235,7 +247,21 @@ main .dasboard__datadoc, main .dasboard__dataproc, main .dasboard__datacomp {
 
 }
 
+.dasboard__log{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+}
+
 .dasboard__document .dasboard__judul {
+    margin-top: 20px;
+    color: var(--main-black);
+
+}
+
+.dasboard__log .dasboard__judul {
     margin-top: 20px;
     color: var(--main-black);
 
@@ -245,6 +271,12 @@ main .dasboard__datadoc, main .dasboard__dataproc, main .dasboard__datacomp {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dasboard__document .dasboard__search{
+    display: flex;
+    justify-content: end;
     margin-bottom: 10px;
 }
 
@@ -258,11 +290,79 @@ main .dasboard__datadoc, main .dasboard__dataproc, main .dasboard__datacomp {
     filter: brightness(110%);
 }
 
+.dasboard__log .dasboard__search{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+.dasboard__log .dasboard__search button, .dasboard__document .dasboard__search button {
+    border: none;
+    padding: 10px;
+    background-color: var(--light-orange);
+}
+
+.dasboard__log .dasboard__search button:hover, .dasboard__document .dasboard__search button:hover {
+    filter: brightness(110%);
+}
+
+.dasboard__log .dasboard__button_and_search button a {
+    color: var(--main-black);
+    text-decoration: none;
+}
+
 .dasboard__document .dasboard__button_and_search button a {
     color: var(--main-black);
     text-decoration: none;
 }
 
+table .column__folder {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+table .action_table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+table .action_table .a-preview {
+    width: fit-content;
+    padding: 3px 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    border:1px solid var(--light-orange);
+    color: var(--main-orange);
+}
+
+table .action_table .a-generate {
+    width: fit-content;
+    padding: 2px 4px;
+    border-radius: 5px;
+    text-decoration: none;
+    border:1px solid var(--light-green);
+    color: var(--main-green);
+}
+
+table .action_table .a-edit:hover {
+    background-color: var(--light-orange);
+}
+
+table .action_table .a-delete:hover{
+    background-color: var(--light-green);
+}
+
+.delete-button{
+    background: none;
+    border: none;
+}
+.delete-button:focus{
+    border: none;
+    outline: none;
+}
 table td .dasboard-icon {
     width: 20px;
     height: 25px;
@@ -388,6 +488,9 @@ body section .card button a, body section .card_form button a {
     .container, .sidebar.close{
         height: auto;
     }
+    .container-secondary, .sidebar.close{
+        height: 100vh;
+    }
 
     .sidebar {
         width: 100px;
@@ -443,6 +546,5 @@ body section .card button a, body section .card_form button a {
         height: auto;
         padding: 10px 20px;
     }
-
 
 }
