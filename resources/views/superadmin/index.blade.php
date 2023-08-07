@@ -38,7 +38,7 @@
 
                     </li>
                     <li>
-                        <a href="{{route("notaris.generateshow")}}">
+                        <a href="{{route("notaris.generate")}}">
                             <img src="{{ asset('images/printer.png') }}" alt="printer" class="sidebar__iconnav">
                             <span>Cetak Dokumen</span>
                         </a>
@@ -94,7 +94,7 @@
                     <h2>Data Dokumen</h2>
                 </div>
                 <div class="dasboard__button_and_search">
-                    <button><a href="{{route("pengajuan.create")}}">Tambah Dokumen</a></button>
+                    <button><a href="{{route("pengajuan_data.create")}}">Tambah Dokumen</a></button>
                     <form action="{{route('notaris.index')}}" method="get" class="d-flex search">
                         <input class="form-control me 2" type="search" placeholder="search" name="customer_id">
                         <button class="search-button" type="submit">Search</button>
@@ -123,9 +123,9 @@
                                     <td>{!! $data->alamat !!}</td>
                                     <td>{!! $data->status !!}</td>
                                     <td class="">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengajuan.destroy', $data->id) }}" method="POST">
-                                            <a class="a-edit" href="{{route('pengajuan.edit', $data->id)}}"><img src="{{ asset('images/edit.png') }}" alt="edit"
-                                                                           class="dasboard-icon"></a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengajuan_data.destroy', $data->id) }}" method="POST">
+                                            <a class="a-edit" href="{{route('pengajuan_data.edit', $data->id)}}"><img src="{{ asset('images/edit.png') }}" alt="edit"
+                                                                                                                      class="dasboard-icon"></a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="a-delete delete-button">
@@ -146,8 +146,8 @@
                                         <td>{!! $post->alamat !!}</td>
                                         <td>{!! $post->status !!}</td>
                                         <td class="">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengajuan.destroy', $post->id) }}" method="POST">
-                                                <a class="a-edit" href="{{route('pengajuan.edit', $post->id)}}"><img src="{{ asset('images/edit.png') }}" alt="edit"
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengajuan_data.destroy', $post->id) }}" method="POST">
+                                                <a class="a-edit" href="{{route('pengajuan_data.edit', $post->id)}}"><img src="{{ asset('images/edit.png') }}" alt="edit"
                                                                                                                      class="dasboard-icon"></a>
                                                 @csrf
                                                 @method('DELETE')
@@ -206,6 +206,8 @@
                     @endif
 
                 </div>
+
+
             </div>
         </main>
     </div>
