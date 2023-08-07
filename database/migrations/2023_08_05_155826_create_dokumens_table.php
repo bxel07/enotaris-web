@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('dokumens', function (Blueprint $table) {
             $table->id();
-            $table->string('ktp');
-            $table->string('npwp');
-            $table->string('sertifikattanah');
-            $table->unsignedBigInteger('enotaris_id');
-            $table->foreign('enotaris_id')->references('id')->on('enotaris')->onDelete('cascade');
+            $table->unsignedBigInteger('id_pengajuan');
+            $table->string('ktp')->nullable();
+            $table->string('npwp')->nullable();
+            $table->string('kk')->nullable();
             $table->timestamps();
+            $table->foreign('id_pengajuan')->references('id')->on('pengajuan_datas')->onDelete('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_dokumens');
+        Schema::dropIfExists('dokumens');
     }
 };

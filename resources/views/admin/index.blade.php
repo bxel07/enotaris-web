@@ -23,7 +23,7 @@
             <div class="sidebar__user">
                 <img src="{{ asset('images/user2.png') }}" alt="user" class="user">
                 <div class="sidebar__userrole">
-                    <span>Notaris</span>
+                    <span>admin</span>
                     <span class="sidebar__username">{{ auth()->user()->firstname }}</span>
                 </div>
                  <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
@@ -31,26 +31,26 @@
             <nav>
                 <ul class="sidebar__navmenu">
                     <li>
-                        <a href="{{route("notaris.index")}}">
+                        <a href="{{route("pegawai.index")}}">
                             <img src="{{ asset('images/dashboard.png') }}" alt="dashboard" class="sidebar__iconnav">
                             <span>Dashboard</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="{{route("notaris.generate")}}">
+                        <a href="{{route("pegawai.generateshow")}}">
                             <img src="{{ asset('images/printer.png') }}" alt="printer" class="sidebar__iconnav">
                             <span>Cetak Dokumen</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route("notaris.log")}}">
+                        <a href="{{route("pegawai.log")}}">
                             <img src="{{ asset('images/log.png') }}" alt="log" class="sidebar__iconnav">
                             <span>Log</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route("notaris.files")}}">
+                        <a href="{{route("pegawai.file")}}">
                             <img src="{{ asset('images/folder.png') }}" alt="folder" class="sidebar__iconnav">
                             <span>Folder</span>
                         </a>
@@ -93,10 +93,11 @@
                 <div class="dasboard__judul">
                     <h2>Data Dokumen</h2>
                 </div>
-                <div class="dasboard__button_and_search">
-                    <button><a href="{{route("pengajuan_data.create")}}">Tambah Dokumen</a></button>
-                    <form action="{{route('notaris.index')}}" method="get" class="d-flex search">
+                <div class="dasboard__search">
+                    <form action="{{route('pegawai.index')}}" method="get" class="d-flex search">
+{{--                        @csrf--}}
                         <input class="form-control me 2" type="search" placeholder="search" name="customer_id">
+
                         <button class="search-button" type="submit">Search</button>
                     </form>
                 </div>
@@ -109,7 +110,6 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -122,18 +122,6 @@
                                     <td>{{ $data->nama }}</td>
                                     <td>{!! $data->alamat !!}</td>
                                     <td>{!! $data->status !!}</td>
-                                    <td class="">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengajuan_data.destroy', $data->id) }}" method="POST">
-                                            <a class="a-edit" href="{{route('pengajuan_data.edit', $data->id)}}"><img src="{{ asset('images/edit.png') }}" alt="edit"
-                                                                                                                      class="dasboard-icon"></a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="a-delete delete-button">
-                                                <img src="{{ asset('images/delete.png') }}" alt="delete" class="dasboard-icon">
-                                            </button>
-
-                                        </form>
-                                    </td>
                                 </tr>
                             @endforeach
                         @else
@@ -145,18 +133,6 @@
                                         <td>{{ $post->nama }}</td>
                                         <td>{!! $post->alamat !!}</td>
                                         <td>{!! $post->status !!}</td>
-                                        <td class="">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pengajuan_data.destroy', $post->id) }}" method="POST">
-                                                <a class="a-edit" href="{{route('pengajuan_data.edit', $post->id)}}"><img src="{{ asset('images/edit.png') }}" alt="edit"
-                                                                                                                     class="dasboard-icon"></a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="a-delete delete-button">
-                                                    <img src="{{ asset('images/delete.png') }}" alt="delete" class="dasboard-icon">
-                                                </button>
-
-                                            </form>
-                                        </td>
                                     </tr>
                                 @endforeach
                             @else
@@ -206,8 +182,6 @@
                     @endif
 
                 </div>
-
-
             </div>
         </main>
     </div>

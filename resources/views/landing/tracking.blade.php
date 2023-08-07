@@ -72,10 +72,12 @@
                 </div>
                 <div class="col-9">
                     <a href="" class="btn-get-started scrollto">Track Progress</a>
-                    <form action="" method="GET">
-                        <input class="form-control" type="text" placeholder="Please enter your waybill" aria-label="default input example">
+                    <form action="{{route('dotracking')}}" method="POST">
+                        @csrf
+                        <input class="form-control" type="number" placeholder="Please enter your waybill" name="id_customer" aria-label="default input example">
+                        <button type="submit" class="btn-get-started scrollto">search</button>
+
                     </form>
-                    <a href="/tracking-after" class="btn-get-started scrollto">search</a>
                 </div>
                 <div class="col">
                 </div>
