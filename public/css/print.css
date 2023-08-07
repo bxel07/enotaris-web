@@ -1,0 +1,81 @@
+/* CSS untuk mengatur tata letak halaman saat dicetak */
+@media print {
+    body {
+        font-size: 12px;
+        line-height: 1.4;
+        margin: 2cm;
+        /* Atur margin untuk halaman */
+    }
+
+    #documentPreview {
+        page-break-after: always;
+        /* Menambahkan halaman baru setelah elemen .print-content */
+        margin: 20px;
+        /* Memberikan margin untuk mencetak di kertas */
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        margin-top: 2;
+        font-size: 16px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid #000;
+        padding: 6px;
+        text-align: left;
+    }
+
+    ul {
+        list-style: square;
+        margin-left: 20px;
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    /* Sembunyikan elemen editor saat mode cetak aktif */
+    #editor {
+        display: none;
+    }
+
+    .signature-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    .signature-container1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0px;
+    }
+
+    .signature-box {
+        width: 45%;
+        padding: 10px;
+        border: 1px solid #eeeeee;
+    }
+
+    .signature-box h4 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .signature-box p {
+        text-align: center;
+        font-style: italic;
+        margin: 0;
+    }
+}
