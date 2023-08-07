@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
-class AuthController extends Controller
+class  AuthController extends Controller
 {
     public function login() {
         return view('auth.login');
