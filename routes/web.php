@@ -47,19 +47,17 @@ Route::group(['middleware' => ['auth', 'checkrole:1,2']], function() {
     Route::get('/redirect', [\App\Http\Controllers\RedircetController::class, 'cek']);
     Route::resource('/pengajuan' , \App\Http\Controllers\pengajuancontroller::class);
     Route::get('/pengajuan', [\App\Http\Controllers\pengajuancontroller::class, 'index'])->name('pengajuan.index');
-
+    Route::resource('/pengajuan_data', \App\Http\Controllers\pengajuan\proses_pengajuan::class);
 });
 
 // untuk superadmin
 Route::group(['middleware' => ['auth', 'checkrole:1'], 'prefix' => 'superadmin'], function() {
     //dashboard
-    Route::get('/dashboard', [SuperadminController::class, 'index'])->name('notaris.index');
-    //dokumen manipulator notaris
-    Route::get('/pengajuan/editdokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'editdokumen'])->name('pengajuan.editdokumen');
-    Route::put('/pengajuan/updatedokumen/{id}', [\App\Http\Controllers\pengajuancontroller::class, 'updatedokumen'])->name('pengajuan.updatedokumen');
+    Route::get('/dashboard', [App\Http\Controllers\user\SuperAdmin::class, 'index'])->name('notaris.index');
+    //generate router
+    Route::get('/generate', [App\Http\Controllers\user\SuperAdmin::class, 'generate'])->name('notaris.generate');
+    Route::get('/preview/{id}',[App\Http\Controllers\user\SuperAdmin::class, 'preview'])->name('notaris.preview');
 
-
-    Route::get('/generate', [SuperadminController::class, 'generateshow'])->name('notaris.generateshow');
     Route::get('/log', [SuperadminController::class, 'log'])->name('notaris.log');
     Route::get('/file', [SuperadminController::class, 'files'])->name('notaris.files');
 });

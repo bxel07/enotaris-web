@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class dokumen extends Model
+class data_cv extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-      'id_pengajuan',
-      'ktp',
-      'npwp',
-      'kk'
+        'id_pengajuan',
+        'nama_cv',
+        'alamat_cv',
+        'bidang_usaha',
+        'modal',
+        'persero_aktif',
+        'persero_pasif'
     ];
 
     public function pengajuan(): \Illuminate\Database\Eloquent\Relations\BelongsTo

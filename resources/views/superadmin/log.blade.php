@@ -25,38 +25,38 @@
                 <div class="sidebar__userrole">
                     <span>admin</span>
                     <span class="sidebar__username">Zulfian Nafis</span>
-                </div>  
+                </div>
                  <img src="{{ asset('images/right-arrow.png') }}" alt="arrow" class="sidebar__toggle">
             </div>
             <nav>
                 <ul class="sidebar__navmenu">
                     <li>
-                        <a href="#">
+                        <a href="{{route('notaris.index')}}">
                             <img src="{{ asset('images/dashboard.png') }}" alt="dashboard" class="sidebar__iconnav">
                             <span>Dashboard</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('notaris.generateshow')}}">
                             <img src="{{ asset('images/printer.png') }}" alt="printer" class="sidebar__iconnav">
                             <span>Cetak Dokumen</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('notaris.log')}}">
                             <img src="{{ asset('images/log.png') }}" alt="log" class="sidebar__iconnav">
                             <span>Log</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('notaris.files')}}">
                             <img src="{{ asset('images/folder.png') }}" alt="folder" class="sidebar__iconnav">
                             <span>Folder</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" id="logout">
                             <img src="{{ asset('images/logout.png') }}" alt="logout" class="sidebar__iconnav">
                             <span>Logout</span>
                         </a>
@@ -92,20 +92,20 @@
                                 <td>Mark</td>
                                 <td>Lamongan</td>
                                 <td class="failed-status fw-bold">FAILED</td>
-                              
+
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Jacob</td>
                                 <td>Surabaya</td>
                                 <td class="progress-status">ON PROGRESS</td>
-                               
+
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td colspan="2">Larry the Bird</td>
                                 <td class="succes-status">SUCCESS</td>
-                               
+
                             </tr>
                         </tbody>
                     </table>

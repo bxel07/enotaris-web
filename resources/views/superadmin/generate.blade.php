@@ -31,26 +31,26 @@
             <nav>
                 <ul class="sidebar__navmenu">
                     <li>
-                        <a href="{{route('pegawai.index')}}">
+                        <a href="{{route('notaris.index')}}">
                             <img src="{{ asset('images/dashboard.png') }}" alt="dashboard" class="sidebar__iconnav">
                             <span>Dashboard</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="{{route('pegawai.generateshow')}}">
+                        <a href="{{route('notaris.generate')}}">
                             <img src="{{ asset('images/printer.png') }}" alt="printer" class="sidebar__iconnav">
                             <span>Cetak Dokumen</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('notaris.log')}}">
                             <img src="{{ asset('images/log.png') }}" alt="log" class="sidebar__iconnav">
                             <span>Log</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('notaris.files')}}">
                             <img src="{{ asset('images/folder.png') }}" alt="folder" class="sidebar__iconnav">
                             <span>Folder</span>
                         </a>
@@ -115,7 +115,7 @@
                                         <td>{!! $post->jenis_pengajuan !!}</td>
                                         <td>{!! $post->status !!}</td>
                                         <td class="action_table">
-                                            <a class="a-preview" href="">preview</a>
+                                            <a class="a-preview" href="{{route('notaris.preview', $post->id)``}}">preview</a>
                                             <a href="" class="a-generate">generate</a>
                                         </td>
                                     </tr>
